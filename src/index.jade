@@ -50,54 +50,26 @@ block content
       img(src='images/logo_clients/docapost.png', alt='Docapost')
   h2 Technologies
   ul#technologies.row.align-center.align-middle.small-up-2.medium-up-3.large-up-4
-    li.column
-      img(src='images/logo_techs/angular.svg', alt='')
-      p Angular 1
-    li.column
-      img(src='images/logo_techs/docker.png', alt='')
-      p Docker
-    li.column
-      img(src='images/logo_techs/nodejs.svg', alt='')
-      p NodeJS
-    li.column
-      img(src='images/logo_techs/webpack.svg', alt='')
-      p Webpack
-    li.column
-      img(src='images/logo_techs/react.svg', alt='')
-      p React
-    li.column
-      img(src='images/logo_techs/algolia.png', alt='')
-      p Algolia
-    li.column
-      img(src='images/logo_techs/electron.png', alt='')
-      p Electron
-    li.column
-      img(src='images/logo_techs/firebase.png', alt='')
-      p Firebase
-    li.column
-      img(src='images/logo_techs/mongodb.jpg', alt='')
-      p MongoDB
-    li.column
-      img(src='images/logo_techs/php7.png', alt='')
-      p PHP7
-    li.column
-      img(src='images/logo_techs/java.png', alt='')
-      p Java
-    li.column
-      img(src='images/logo_techs/swift.svg', alt='')
-      p Swift
-    li.column
-      img(src='images/logo_techs/android.svg', alt='')
-      p Android
-    li.column
-      img(src='images/logo_techs/java.png', alt='')
-      p Javascript
-    li.column
-      img(src='images/logo_techs/dotnet.svg', alt='')
-      p Microsoft .NET
-    li.column
-      img(src='images/logo_techs/apple.png', alt='')
-      p iOS
+    mixin tech(techname, logo)
+      li.column
+        img(src='images/logo_techs/#{logo}', alt='')
+        p #{techname}
+    +tech('Angular 1', 'angular.svg')
+    +tech('Docker', 'docker.png')
+    +tech('NodeJS', 'nodejs.svg')
+    +tech('Webpack', 'webpack.svg')
+    +tech('React', 'react.svg')
+    +tech('Algolia', 'algolia.png')
+    +tech('Electron', 'electron.png')
+    +tech('Firebase', 'firebase.png')
+    +tech('MongoDB', 'mongodb.jpg')
+    +tech('PHP7', 'php7.png')
+    +tech('Java', 'java.png')
+    +tech('Swift', 'swift.svg')
+    +tech('Android', 'android.svg')
+    +tech('Javascript', 'javascript.svg')
+    +tech('Microsoft .NET', 'dotnet.svg')
+    +tech('iOS', 'apple.png')
   h2 Suivez-nous
   ul#tweets.row.align-center.align-middle.small-up-3.medium-up-4.large-up-6
     li.column

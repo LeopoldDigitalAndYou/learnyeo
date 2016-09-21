@@ -82,7 +82,7 @@
     },
     "entries": {
       "js": "main**.js",
-      "css": "main**.{sass,scss}"
+      "css": "**.{sass,scss}"
     }
   }
 }
