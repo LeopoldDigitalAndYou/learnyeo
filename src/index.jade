@@ -3,13 +3,184 @@ extends _layouts/base
 include _modules/link/link
 
 block content
-  .container
-    .yeogurt-info
-      h1 Welcome to Yeogurt!
-      p.
-        Take a look at the
-        #[+link({text: 'documentation'})(href='https://github.com/larsonjj/generator-yeogurt#yeogurt-generator---')]
-        and start mixing up something awesome.
-      p
-        img.logo(src="images/yeogurt-swirl.png", width="75px")
-  code.version v1.5.3
+  div(data-sticky-container='')
+    .title-bar.sticky(data-sticky='', data-options='marginTop:0;')
+      p.title-bar-left
+        a(href='#')
+          img(src='images/logo_dyou.svg', alt='Accueil', width='100')
+      .title-bar-right
+        a(href='https://www.facebook.com/DigitalYou')
+          img(src='images/facebook.png', alt='Facebook')
+        a(href='https://www.linkedin.com/company/digital-&-you')
+          img(src='images/linkedin.png', alt='LinkedIn')
+        a(href='https://twitter.com/DigitalandYou')
+          img(src='images/twitter.png', alt='Twitter')
+  #titleCard
+    h1
+      img(src='images/logo_dyou.svg', alt='Digital & you')
+    h1 Change the code
+  .row.align-middle.align-center
+    h2.column.small-10.medium-6.large-4 Clients
+    .column.small-2.medium-6.large-8
+      hr
+  ul.row.align-center.align-middle.small-up-2.medium-up-3.large-up-4
+    li.column
+      img(src='images/logo_clients/axa.svg', alt='AXA')
+    li.column
+      img(src='images/logo_clients/societe_generale.svg', alt='Société Générale')
+    li.column
+      img(src='images/logo_clients/bnp.svg', alt='BNP Paribas')
+    li.column
+      img(src='images/logo_clients/sncf.svg', alt='SNCF')
+    li.column
+      img(src='images/logo_clients/publicis.svg', alt='Publicis')
+    li.column
+      img(src='images/logo_clients/seloger.png', alt='Se Loger')
+    li.column
+      img(src='images/logo_clients/deezer.svg', alt='Deezer')
+    li.column
+      img(src='images/logo_clients/backelite.png', alt='Backelite')
+    li.column
+      img(src='images/logo_clients/lemonde.svg', alt='Le Monde')
+    li.column
+      img(src='images/logo_clients/fdj.svg', alt='Française des Jeux')
+    li.column
+      img(src='images/logo_clients/molotov.png', alt='Molotov.tv')
+    li.column
+      img(src='images/logo_clients/docapost.png', alt='Docapost')
+  h2 Technologies
+  ul#technologies.row.align-center.align-middle.small-up-2.medium-up-3.large-up-4
+    li.column
+      img(src='images/logo_techs/angular.svg', alt='')
+      p Angular 1
+    li.column
+      img(src='images/logo_techs/docker.png', alt='')
+      p Docker
+    li.column
+      img(src='images/logo_techs/nodejs.svg', alt='')
+      p NodeJS
+    li.column
+      img(src='images/logo_techs/webpack.svg', alt='')
+      p Webpack
+    li.column
+      img(src='images/logo_techs/react.svg', alt='')
+      p React
+    li.column
+      img(src='images/logo_techs/algolia.png', alt='')
+      p Algolia
+    li.column
+      img(src='images/logo_techs/electron.png', alt='')
+      p Electron
+    li.column
+      img(src='images/logo_techs/firebase.png', alt='')
+      p Firebase
+    li.column
+      img(src='images/logo_techs/mongodb.jpg', alt='')
+      p MongoDB
+    li.column
+      img(src='images/logo_techs/php7.png', alt='')
+      p PHP7
+    li.column
+      img(src='images/logo_techs/java.png', alt='')
+      p Java
+    li.column
+      img(src='images/logo_techs/swift.svg', alt='')
+      p Swift
+    li.column
+      img(src='images/logo_techs/android.svg', alt='')
+      p Android
+    li.column
+      img(src='images/logo_techs/java.png', alt='')
+      p Javascript
+    li.column
+      img(src='images/logo_techs/dotnet.svg', alt='')
+      p Microsoft .NET
+    li.column
+      img(src='images/logo_techs/apple.png', alt='')
+      p iOS
+  h2 Suivez-nous
+  ul#tweets.row.align-center.align-middle.small-up-3.medium-up-4.large-up-6
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+    li.column
+      .tweet
+        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+        img(src='images/garage56.jpg', alt='Garage 56')
+        p Lorem ipsum sed erat, dolor sit…
+  h2 Témoinages de devs
+  .row.align-center.align-middle
+    .media-object.column.small-12.medium-12.large-6
+      .media-object-section
+        img(src='images/devs/jp.png')
+      .media-object-section.main-section
+        h3 Le projet de mes rêves
+        blockquote
+          p
+            | Nihil morati post haec militares avidi saepe turbarum adorti sunt
+            | Montium primum, qui divertebat in proximo, levi corpore senem
+            | atque morbosum.
+        cite Jean-Paul, 22 ans
+  h2 Découvrir Digital & You
+  h2 Votre choix
+  h2 Nous rencontrer
+  div
+    p Digital & You
+    p Cabinet de conseil et recrutement digital
+  div
+    p Bureaux parisiens
+    p 14 Bodivevard Montmatrte, 75009 Paris
+    p Email: contact@digitalandyou.com
+    p Tel: 01 82 28 49 40 | Fax: 01 75 43 34 28

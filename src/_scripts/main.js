@@ -3,10 +3,8 @@
 
 'use strict';
 
-import $ from 'jquery';
-import Link from '../_modules/link/link';
+var $ = require("../../node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js");
+window.jQuery = $;
 
-$(() => {
-  new Link(); // Activate Link modules logic
-  console.log('Welcome to Yeogurt!');
-});
+require('../../node_modules/foundation-sites/dist/foundation.min.js');
+$(document).foundation();

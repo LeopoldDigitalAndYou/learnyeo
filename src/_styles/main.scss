@@ -1,43 +1,111 @@
-// Normalize Styles
-@import 'node_modules/normalize.css/normalize';
+@import 'node_modules/foundation-sites/scss/foundation';
 
-// Import Modules
-@import '../_modules/link/link';
+@include foundation-everything(true);
 
-// Box sizing partial styles:
-// Apply a natural box layout model to all elements
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+hr {
+  background: black;
+  height: 0.3em;
 }
 
-.yeogurt-info {
+.title-bar {
+  width: 100%;
+  height: 70px;
+  background: black;
+}
+
+#titleCard {
+  background: black;
+  color: white;
   text-align: center;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  text-transform: uppercase;
+  padding: 2em 0;
 }
 
-.version {
-  font-size: 14px;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+#titleCard h1 {
+  width: 30%;
+  margin: 1em auto;
+}
+
+.column {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+#technologies {
+  text-transform: uppercase;
+}
+
+#technologies .column:hover img {
+  transform: rotate3d(0, 1, 0, 360deg);
+  transition-duration: 1s;
+  opacity: 0;
+}
+
+#technologies p {
+  display: none;
+}
+
+#technologies .column:hover p {
+  display: block;
   position: absolute;
-  bottom: 10px;
-  right: 10px;
 }
 
-.logo {
-  margin-top: 15px;
+#tweets li {
+  position: relative;
+  padding: 0.4em;
 }
 
-// Styling on warning for users on IE7 or below
-.browsehappy {
-  text-align: center;
+#tweets li .tweet {
+  border: 1px solid black;
+  padding: 0.2em;
+}
+
+#tweets .icon {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+}
+
+#tweets p {
   margin: 0;
-  background: #fff8e2;
-  color: #000;
-  padding: 0.5em 0;
+}
+
+$portrait-size: 150px;
+.media-object-section img {
+  width: $portrait-size;
+  height: $portrait-size;
+}
+
+.media-object-section * {
+  color: black;
+  text-align: left;
+}
+
+.media-object-section blockquote {
+  border: 0;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.media-object-section blockquote p::before {
+  content:"“";
+}
+.media-object-section blockquote p::after {
+  content:"”";
+}
+.media-object-section blockquote p::before, .media-object-section blockquote p::after {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.media-object-section h3, .media-object-section cite {
+  text-transform: uppercase;
 }
