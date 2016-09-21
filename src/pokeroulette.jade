@@ -1,0 +1,21 @@
+extends _layouts/base
+
+include _modules/pokeshapes/pokeshapes
+
+block head
+  title Pokémon roulette!
+
+block content
+  h1 Pokémon shapes
+  div#pokeshapes
+    p#pokesprite
+    div#showshape
+      strong#pokename &lt;No Pokémon name&gt;
+      |  is a&nbsp;
+      strong#pokecolour &lt;no colour found&gt;
+      |  and&nbsp;
+      strong#pokesize &lt;no size found&gt;
+      |  Pokémon.
+
+block scripts
+    script(src="scripts/pokeroulette.js")
