@@ -1,6 +1,12 @@
 extends _layouts/base
 
 include _modules/link/link
+include _modules/hello/hello
+
+block head
+  title Hello!
 
 block content
   h1 Hi mom!
+  +hello({"name":"Nico", "age":39})(title="Title-text!!!!")
+

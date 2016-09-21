@@ -2,6 +2,9 @@ extends _layouts/base
 
 include _modules/link/link
 
+block head
+  title Digital & You
+
 block content
   div(data-sticky-container='')
     .title-bar.sticky(data-sticky='', data-options='marginTop:0;')
@@ -24,127 +27,47 @@ block content
     .column.small-2.medium-6.large-8
       hr
   ul.row.align-center.align-middle.small-up-2.medium-up-3.large-up-4
-    li.column
-      img(src='images/logo_clients/axa.svg', alt='AXA')
-    li.column
-      img(src='images/logo_clients/societe_generale.svg', alt='Société Générale')
-    li.column
-      img(src='images/logo_clients/bnp.svg', alt='BNP Paribas')
-    li.column
-      img(src='images/logo_clients/sncf.svg', alt='SNCF')
-    li.column
-      img(src='images/logo_clients/publicis.svg', alt='Publicis')
-    li.column
-      img(src='images/logo_clients/seloger.png', alt='Se Loger')
-    li.column
-      img(src='images/logo_clients/deezer.svg', alt='Deezer')
-    li.column
-      img(src='images/logo_clients/backelite.png', alt='Backelite')
-    li.column
-      img(src='images/logo_clients/lemonde.svg', alt='Le Monde')
-    li.column
-      img(src='images/logo_clients/fdj.svg', alt='Française des Jeux')
-    li.column
-      img(src='images/logo_clients/molotov.png', alt='Molotov.tv')
-    li.column
-      img(src='images/logo_clients/docapost.png', alt='Docapost')
+    mixin client(spec)
+      li.column
+        img(src='images/logo_clients/#{spec.logo}', alt='#{spec.name}')
+    for clientspec in site.data.dyou.clientspecs
+      +client(clientspec)
   h2 Technologies
   ul#technologies.row.align-center.align-middle.small-up-2.medium-up-3.large-up-4
-    mixin tech(techname, logo)
+    mixin tech(techspec)
       li.column
-        img(src='images/logo_techs/#{logo}', alt='')
-        p #{techname}
-    +tech('Angular 1', 'angular.svg')
-    +tech('Docker', 'docker.png')
-    +tech('NodeJS', 'nodejs.svg')
-    +tech('Webpack', 'webpack.svg')
-    +tech('React', 'react.svg')
-    +tech('Algolia', 'algolia.png')
-    +tech('Electron', 'electron.png')
-    +tech('Firebase', 'firebase.png')
-    +tech('MongoDB', 'mongodb.jpg')
-    +tech('PHP7', 'php7.png')
-    +tech('Java', 'java.png')
-    +tech('Swift', 'swift.svg')
-    +tech('Android', 'android.svg')
-    +tech('Javascript', 'javascript.svg')
-    +tech('Microsoft .NET', 'dotnet.svg')
-    +tech('iOS', 'apple.png')
+        img(src='images/logo_techs/#{techspec.logo}', alt='')
+        p #{techspec.name}
+    for techspec in site.data.dyou.techspecs
+      +tech(techspec)
   h2 Suivez-nous
   ul#tweets.row.align-center.align-middle.small-up-3.medium-up-4.large-up-6
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
-    li.column
-      .tweet
-        img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
-        img(src='images/garage56.jpg', alt='Garage 56')
-        p Lorem ipsum sed erat, dolor sit…
+    mixin tweet()
+      li.column
+        .tweet&attributes(attributes)
+          img.icon(src='images/icone_twitter.png', alt='Depuis Twitter')
+          img(src='images/garage56.jpg', alt='Garage 56')
+          p Lorem ipsum sed erat, dolor sit…
+    - var tweetn = 0;
+      while tweetn < 12
+        +tweet()(id="tweet#{tweetn++}")
   h2 Témoinages de devs
   .row.align-center.align-middle
-    .media-object.column.small-12.medium-12.large-6
-      .media-object-section
-        img(src='images/devs/jp.png')
-      .media-object-section.main-section
-        h3 Le projet de mes rêves
-        blockquote
-          p
-            | Nihil morati post haec militares avidi saepe turbarum adorti sunt
-            | Montium primum, qui divertebat in proximo, levi corpore senem
-            | atque morbosum.
-        cite Jean-Paul, 22 ans
+    mixin temoignage(spec)
+      .media-object.column.small-12.medium-12.large-6
+        .media-object-section
+          img(src='images/devs/#{spec.shortname}.png')
+        .media-object-section.main-section
+          h3 #{spec.title}
+          blockquote
+            p #{spec.contents}
+          cite #{spec.devname}, #{spec.devage} ans
+    +temoignage({"devname":"Jean-Paul",
+      "shortname":"jp", devage:22,
+      "title":"Le projet de mes rêves",
+      "contents":"Nihil morati post haec militares avidi saepe turbarum" +
+      "adorti sunt Montium primum, qui divertebat in proximo," +
+      "levi corpore senem atque morbosum."})
   h2 Découvrir Digital & You
   h2 Votre choix
   h2 Nous rencontrer

@@ -1,0 +1,118 @@
+{
+  "clientspecs": [
+    {
+      "name": "AXA",
+      "logo": "axa.svg"
+    },
+    {
+      "name": "Société Générale",
+      "logo": "societe_generale.svg"
+    },
+    {
+      "name": "BNP Paribas",
+      "logo": "bnp.svg"
+    },
+    {
+      "name": "SNCF",
+      "logo": "sncf.svg"
+    },
+    {
+      "name": "Publicis",
+      "logo": "publicis.svg"
+    },
+    {
+      "name": "Se Loger",
+      "logo": "seloger.png"
+    },
+    {
+      "name": "Deezer",
+      "logo": "deezer.svg"
+    },
+    {
+      "name": "Backelite",
+      "logo": "backelite.png"
+    },
+    {
+      "name": "Le Monde",
+      "logo": "lemonde.svg"
+    },
+    {
+      "name": "Française des Jeux",
+      "logo": "fdj.svg"
+    },
+    {
+      "name": "Molotov.tv",
+      "logo": "molotov.png"
+    },
+    {
+      "name": "Docapost",
+      "logo": "docapost.png"
+    }
+  ],
+  "techspecs": [
+    {
+      "name": "Angular 1",
+      "logo": "angular.svg"
+    },
+    {
+      "name": "Docker",
+      "logo": "docker.png"
+    },
+    {
+      "name": "NodeJS",
+      "logo": "nodejs.svg"
+    },
+    {
+      "name": "Webpack",
+      "logo": "webpack.svg"
+    },
+    {
+      "name": "React",
+      "logo": "react.svg"
+    },
+    {
+      "name": "Algolia",
+      "logo": "algolia.png"
+    },
+    {
+      "name": "Electron",
+      "logo": "electron.png"
+    },
+    {
+      "name": "Firebase",
+      "logo": "firebase.png"
+    },
+    {
+      "name": "MongoDB",
+      "logo": "mongodb.jpg"
+    },
+    {
+      "name": "PHP7",
+      "logo": "php7.png"
+    },
+    {
+      "name": "Java",
+      "logo": "java.png"
+    },
+    {
+      "name": "Swift",
+      "logo": "swift.svg"
+    },
+    {
+      "name": "Android",
+      "logo": "android.svg"
+    },
+    {
+      "name": "Javascript",
+      "logo": "javascript.svg"
+    },
+    {
+      "name": "Microsoft .NET",
+      "logo": "dotnet.svg"
+    },
+    {
+      "name": "iOS",
+      "logo": "apple.png"
+    }
+  ]
+}

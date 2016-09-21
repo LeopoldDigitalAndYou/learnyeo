@@ -16,7 +16,7 @@ doctype html
 head
   meta(charset='utf-8')
   meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-  title Digital & You
+  block head
   meta(name='description', content= 'Page Digital & You avec Yeogurt')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   block stylesheets
@@ -28,6 +28,9 @@ body
   <![endif]-->
 
   block content
+
+  p
+    +link({"__class": "testLink", "text": "A test link."})(href="http://www.xkcd.com/",title="Example!")
 
   block scripts
     script(src= baseUrl + 'scripts/main.js')
