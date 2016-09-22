@@ -26,11 +26,11 @@ class Pokemon {
     this.sync();
   }
   describeHeight() {
-    if(this.heightInDm < 10) {
+    if(this.heightInDm < 5) {
       return "small"
     }
     else{
-      if(this.heightInDm > 20) {
+      if(this.heightInDm > 10) {
         return "large"
       }
       else {
@@ -44,6 +44,10 @@ class Pokemon {
     $("#pokecolour").html(this.colour);
     $("#pokesize").html(this.describeHeight());
     $("#pokesprite").html('<img alt="' + this.name + '" src="' + this.spriteUrl + '">');
+    $("#showshape").css({
+      'background': this.colour,
+      'height': 10 * this.heightInDm + 'px'
+    });
   }
 }
 
