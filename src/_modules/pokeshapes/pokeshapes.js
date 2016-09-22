@@ -3,7 +3,6 @@
 var $ = require("../../../node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js");
 window.jQuery = $;
 
-const pokemonCount = 151;
 const colourCount = 10;
 
 function randomChoice(items) {
@@ -15,6 +14,22 @@ function randomColour() {
   return 1 + Math.floor(Math.random()*colourCount);
 }
 
+function contrastColour(rgbCode) {
+  // get a colour with good visual contrast
+  var rgbIn = rgbCode.split("(")[1].split(")")[0].split(",");
+  var rIn = Math.round(rgbIn[0]);
+  var gIn = Math.round(rgbIn[1]);
+  var bIn = Math.round(rgbIn[2]);
+  // FIXME: better contrast
+  var rOut = (128+bIn+gIn)%255;
+  var gOut = (128+rIn+bIn)%255;
+  var bOut = (128+rIn+gIn)%255;
+  console.log('rOut',rOut);
+  console.log('gOut',gOut);
+  console.log('bOut',bOut);
+  return 'rgb(' + rOut + ',' + gOut + ',' + bOut + ')';
+}
+
 class Pokemon {
   constructor(pokemonId, name, spriteUrl, colour, height) {
     this.pokemonId = pokemonId;
@@ -23,7 +38,7 @@ class Pokemon {
     this.colour = colour;
     this.heightInDm = height;
     console.log(this);
-    this.sync();
+    this.display();
   }
   describeHeight() {
     if(this.heightInDm < 5) {
@@ -38,7 +53,7 @@ class Pokemon {
       }
     }
   }
-  sync() {
+  display() {
     console.log('Syncing',this.name);
     $("#pokename").html(this.name);
     $("#pokecolour").html(this.colour);
@@ -47,6 +62,13 @@ class Pokemon {
     $("#showshape").css({
       'background': this.colour,
       'height': 10 * this.heightInDm + 'px'
+    });
+    var colour = window.getComputedStyle($("#showshape")[0]).backgroundColor; // to rbg code
+    console.log('colour',colour);
+    var contrastedColour = contrastColour(colour);
+    $("#showshape").css({
+      'color': contrastedColour,
+      'border': '1px solid ' + contrastedColour
     });
   }
 }
@@ -83,6 +105,6 @@ export default class Pokeshapes {
   }
   run() {
     this.tick();
-    window.setInterval(this.tick, 5*1000);
+    //window.setInterval(this.tick, 5*1000);
   }
 }
