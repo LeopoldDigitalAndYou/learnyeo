@@ -20,10 +20,15 @@ function contrastColour(rgbCode) {
   var rIn = Math.round(rgbIn[0]);
   var gIn = Math.round(rgbIn[1]);
   var bIn = Math.round(rgbIn[2]);
-  // FIXME: better contrast
-  var rOut = (128+bIn+gIn)%255;
-  var gOut = (128+rIn+bIn)%255;
-  var bOut = (128+rIn+gIn)%255;
+  if(rIn + gIn + bIn > 3*128) {
+    var rOut = 0;
+    var bOut = 0;
+  }
+  else {
+    var rOut = 255;
+    var bOut = 255;
+  }
+  var gOut = 255-gIn;
   console.log('rOut',rOut);
   console.log('gOut',gOut);
   console.log('bOut',bOut);
@@ -105,6 +110,6 @@ export default class Pokeshapes {
   }
   run() {
     this.tick();
-    //window.setInterval(this.tick, 5*1000);
+    window.setInterval(this.tick, 5*1000);
   }
 }
